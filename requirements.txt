@@ -1,0 +1,7 @@
+-r __lib__/requirements.txt
+
+alembic
+gunicorn==20.1.0
+passlib
+psycopg2-binary
+python-dotenv
