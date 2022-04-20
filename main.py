@@ -1,11 +1,12 @@
-from datetime import timedelta
+from common import db_url, db_meta
+from connect import app
+from moderation import permission_index
 
-from common import app, db_meta, db_url  # noqa
+# this shouldn't be done when alembic is accessing the database
+permission_index.initialize()
 
-jwt = app.configure_jwt_with_loaders(["cookies"], timedelta(hours=72), print)
-api = app.configure_restx()
-
-# add your namespaces here via `api.add_namespace(<namespace>)`
+if db_url == "sqlite://":
+    db_meta.create_all()
 
 if __name__ == "__main__":  # test only
     app.run(debug=True)
