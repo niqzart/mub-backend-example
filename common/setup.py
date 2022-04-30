@@ -6,7 +6,7 @@ from __lib__.flask_fullstack import configure_sqlalchemy, Flask
 
 load_dotenv(".env")
 
-db_url: str = getenv("DB_LINK", "sqlite://")
+db_url: str = getenv("DB_LINK", "sqlite:///app.db")
 db_meta, Base, sessionmaker = configure_sqlalchemy(db_url)
 
 app: Flask = Flask(__name__, versions={"API": "0.1.0"})
