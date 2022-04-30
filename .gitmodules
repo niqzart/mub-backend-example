@@ -1,7 +1,7 @@
 [submodule "__lib__"]
 	path = __lib__
 	url = https://github.com/qwert45hi/flask-fullstack.git
-	branch = new-marshals
+	branch = marshals-simplifications
 [submodule "moderation"]
 	path = moderation
 	url = https://github.com/moderator-hub/flask-fullstack-submodule.git
